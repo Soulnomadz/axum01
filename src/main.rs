@@ -14,7 +14,8 @@ async fn main() {
         .merge(routes_hello())
         .fallback_service(routes_static());
 
-    let addr = SocketAddr::from(([127,0,0,1], 8080));
+    // let addr = SocketAddr::from(([127,0,0,1], 8080));
+    let addr = "0.0.0.0:8080";
     println!("->> Listening on {addr}\n");
 
     let listner = TcpListener::bind(&addr).await.unwrap();
